@@ -72,11 +72,11 @@ while True:
 
     b,r = lt.light()
 
-    # use PySense board's sensors to get temp  humidity light
+    # use PySense board's sensors to get temp humidity light
     lpp.add_temperature(1, si.temperature())
     lpp.add_temperature(2, mp.temperature())
     lpp.add_luminosity(3, b)
-    lpp.add_luminosity(4,r)
+    lpp.add_luminosity(4, r)
     lpp.add_relative_humidity(5, si.humidity())
 
     # send data via LoRaWAN to gateways
@@ -86,7 +86,7 @@ while True:
     # turn LED green to show idle
     pycom.rgbled(red)
 
-    time.sleep(30)
+    # time.sleep(30)
 
     # deeper sleep
-    # machine.deepsleep(1000*60*5) # milliseconds
+    machine.deepsleep(1000*30) # milliseconds
